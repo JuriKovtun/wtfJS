@@ -8,10 +8,11 @@ product.classList.add("product");
 for (let i=0; i<productTemplate.length; i++) {
     product.innerHTML = productTemplate[i];
     document.body.appendChild(product);
+    console.log(productTemplate[i]);
 }
 
 
-console.log(productTemplate);
+
 
 
 

@@ -1,4 +1,4 @@
-let elementName = "div";
+let tagName = "div";
 let attrClass = "class";
 let classValue = "newClass";
 let attrSrc = "src";
@@ -7,7 +7,7 @@ let attrAlt = "alt";
 let altValue = "the picture";
 let innerHtmlValue = "here I am!";
 
-let product = document.createElement(elementName);
+let product = document.createElement(tagName);
 product.setAttribute(attrClass, classValue);
 product.setAttribute(attrSrc, srcValue);
 product.setAttribute(attrAlt, altValue);

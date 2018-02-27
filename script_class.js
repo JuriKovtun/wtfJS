@@ -11,8 +11,9 @@ let product = document.createElement(elementName);
 product.setAttribute(attrClass, classValue);
 product.setAttribute(attrSrc, srcValue);
 product.setAttribute(attrAlt, altValue);
-product.innerHTML = `${innerHtmlValue}  <br>  my class: ${classValue}`;
+product.innerHTML = `${innerHtmlValue}<br>my class: ${classValue}`;
 
 document.body.appendChild(product);
 
 console.log(product);
+alert(product);

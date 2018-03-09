@@ -4,80 +4,65 @@
 //     {className: "jam", captionTag: "h4", captionText: "Marmelade 002", imageAdress: "img/product_pics/jam/jam002.jpg", ingredients: "Lorem ipsum dolor sit amet, his oratio ancillae ea, vidit malis eirmod eos eu.", price: "444"},
 // ];
 
-// let productTag = "div";
-// let productClass = "product__item";
-// let captionTag = "h4";
-// let captionClass = "product__item-caption";
-// let captionInnerHTML = "here I am!";
-// let imageClass = "product__item-image";
-// let imageSrcValue = "img/product_pics/cookies/cookies001.jpg";
-// let imageAltValue = "The tasty cookie!";
-// let ingredientsTag = "span";
-// let ingredientsClass = "product__item-ingredients";
-// let ingredientsInnerHTML = "many of something";
-// let priceTag = "span";
-// let priceClass = "product__item-price";
-// let priceInnerHTML = "111";
-//
-// let product = document.createElement(productTag);
-// product.classList.add(productClass);
-//
-// let productCaption = document.createElement(captionTag);
-// productCaption.classList.add(captionClass);
-// productCaption.innerHTML = `${captionInnerHTML}<br>my class: ${captionClass}`;
-//
-// let productImage = document.createElement("img");
-// productImage.classList.add(imageClass);
-// productImage.setAttribute("src", imageSrcValue);
-// productImage.setAttribute("alt", imageAltValue);
-//
-// let productIngredients = document.createElement(ingredientsTag);
-// productIngredients.classList.add(ingredientsClass);
-// productIngredients.innerHTML = `Ingredients: ${ingredientsInnerHTML}`;
-//
-// let productPrice = document.createElement(priceTag);
-// productPrice.classList.add(priceClass);
-// productPrice.innerHTML = `Price: ${priceInnerHTML}`;
-//
-//
-// product.appendChild(productCaption);
-// product.appendChild(productImage);
-// product.appendChild(productIngredients);
-// product.appendChild(productPrice);
-// document.body.appendChild(product);
-//
-// console.log(product);
-
-
 class classProduct {
 
-    constructor(productTag,productClass) {
+    constructor(productClass, captionClass, captionInnerHTML, imageClass, imageSrcValue, imageAltValue, ingredientsClass, ingredientsInnerHTML, priceClass, priceInnerHTML) {
 
-        this.productTag = productTag;
         this.productClass = productClass;
+        this.captionClass = captionClass;
+        this.captionInnerHTML = captionInnerHTML;
+        this.imageClass = imageClass;
+        this.imageSrcValue = imageSrcValue;
+        this.imageAltValue = imageAltValue;
+        this.ingredientsClass = ingredientsClass;
+        this.ingredientsInnerHTML = ingredientsInnerHTML;
+        this.priceClass = priceClass;
+        this.priceInnerHTML = priceInnerHTML;
+
+
 
     }
 
     render () {
-        let product = document.createElement(this.productTag);
+        let product = document.createElement("div");
         product.classList.add(this.productClass);
+
+        let productCaption = document.createElement("h4");
+        productCaption.classList.add(this.captionClass);
+        productCaption.innerHTML = `${this.captionInnerHTML}<br>my class: ${this.captionClass}`;
+
+        let productImage = document.createElement("img");
+        productImage.classList.add(this.imageClass);
+        productImage.setAttribute("src", this.imageSrcValue);
+        productImage.setAttribute("alt", this.imageAltValue);
+
+        let productIngredients = document.createElement("span");
+        productIngredients.classList.add(this.ingredientsClass);
+        productIngredients.innerHTML = `Ingredients: ${this.ingredientsInnerHTML}`;
+
+        let productPrice = document.createElement("span");
+        productPrice.classList.add(this.priceClass);
+        productPrice.innerHTML = `Price: ${this.priceInnerHTML}`;
+
+
+        product.appendChild(productCaption);
+        product.appendChild(productImage);
+        product.appendChild(productIngredients);
+        product.appendChild(productPrice);
         document.body.appendChild(product);
-    }
 
-    log () {
-        let product = document.createElement(this.productTag);
-        product.classList.add(this.productClass);
-        return product;
-    }
+        console.log(product);
 
+
+    }
 
 
 }
 
-let newProduct = new classProduct("div", "superClass");
+let newProduct = new classProduct("product__item", "product__item-caption", "here I am!", "product__item-image", "img/product_pics/cookies/cookies001.jpg", "The tasty cookie!", "product__item-ingredients", "many of something", "product__item-price", "111");
 newProduct.render();
 
 
-console.log(newProduct.log());
+// console.log(newProduct.log());
 
 

@@ -20,10 +20,9 @@ class classProduct {
         this.priceInnerHTML = priceInnerHTML;
 
 
-
     }
 
-    render () {
+    render() {
         let product = document.createElement("div");
         product.classList.add(this.productClass);
 
@@ -62,7 +61,5 @@ class classProduct {
 let newProduct = new classProduct("product__item", "product__item-caption", "here I am!", "product__item-image", "img/product_pics/cookies/cookies001.jpg", "The tasty cookie!", "product__item-ingredients", "many of something", "product__item-price", "111");
 newProduct.render();
 
-
-// console.log(newProduct.log());
 
 

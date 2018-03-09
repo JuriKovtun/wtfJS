@@ -6,43 +6,34 @@
 
 class classProduct {
 
-    constructor(productClass, captionClass, captionInnerHTML, imageClass, imageSrcValue, imageAltValue, ingredientsClass, ingredientsInnerHTML, priceClass, priceInnerHTML) {
+    constructor(captionInnerHTML, imageSrcValue, ingredientsInnerHTML, priceClass, priceInnerHTML) {
 
-        this.productClass = productClass;
-        this.captionClass = captionClass;
         this.captionInnerHTML = captionInnerHTML;
-        this.imageClass = imageClass;
         this.imageSrcValue = imageSrcValue;
-        this.imageAltValue = imageAltValue;
-        this.ingredientsClass = ingredientsClass;
         this.ingredientsInnerHTML = ingredientsInnerHTML;
-        this.priceClass = priceClass;
         this.priceInnerHTML = priceInnerHTML;
-
-
     }
 
     render() {
         let product = document.createElement("div");
-        product.classList.add(this.productClass);
+        product.classList.add("product__item");
 
         let productCaption = document.createElement("h4");
-        productCaption.classList.add(this.captionClass);
-        productCaption.innerHTML = `${this.captionInnerHTML}<br>my class: ${this.captionClass}`;
+        productCaption.classList.add("product__item-caption");
+        productCaption.innerHTML = `${this.captionInnerHTML}<br>my class is hardcoded xD`;
 
         let productImage = document.createElement("img");
-        productImage.classList.add(this.imageClass);
+        productImage.classList.add("product__item-image");
         productImage.setAttribute("src", this.imageSrcValue);
-        productImage.setAttribute("alt", this.imageAltValue);
+        productImage.setAttribute("alt", "image error");
 
         let productIngredients = document.createElement("span");
-        productIngredients.classList.add(this.ingredientsClass);
+        productIngredients.classList.add("product__item-ingredients");
         productIngredients.innerHTML = `Ingredients: ${this.ingredientsInnerHTML}`;
 
         let productPrice = document.createElement("span");
-        productPrice.classList.add(this.priceClass);
+        productPrice.classList.add("product__item-price");
         productPrice.innerHTML = `Price: ${this.priceInnerHTML}`;
-
 
         product.appendChild(productCaption);
         product.appendChild(productImage);
@@ -51,14 +42,12 @@ class classProduct {
         document.body.appendChild(product);
 
         console.log(product);
-
-
     }
 
 
 }
 
-let newProduct = new classProduct("product__item", "product__item-caption", "here I am!", "product__item-image", "img/product_pics/cookies/cookies001.jpg", "The tasty cookie!", "product__item-ingredients", "many of something", "product__item-price", "111");
+let newProduct = new classProduct("here I am!", "img/product_pics/cookies/cookies001.jpg", "many of something", "111");
 newProduct.render();
 
 

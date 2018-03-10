@@ -6,7 +6,7 @@
 
 class classProduct {
 
-    constructor(captionInnerHTML, imageSrcValue, ingredientsInnerHTML, priceClass, priceInnerHTML) {
+    constructor(captionInnerHTML, imageSrcValue, ingredientsInnerHTML, priceInnerHTML) {
 
         this.captionInnerHTML = captionInnerHTML;
         this.imageSrcValue = imageSrcValue;
@@ -20,7 +20,7 @@ class classProduct {
 
         let productCaption = document.createElement("h4");
         productCaption.classList.add("product__item-caption");
-        productCaption.innerHTML = `${this.captionInnerHTML}<br>my class is hardcoded xD`;
+        productCaption.innerHTML = `${this.captionInnerHTML}`;
 
         let productImage = document.createElement("img");
         productImage.classList.add("product__item-image");
@@ -47,8 +47,11 @@ class classProduct {
 
 }
 
-let newProduct = new classProduct("here I am!", "img/product_pics/cookies/cookies001.jpg", "many of something", "111");
+let newProduct = new classProduct("Cookie on the plate", "img/product_pics/cookies/cookies001.jpg", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "111");
 newProduct.render();
+
+let newProduct01 = new classProduct("Cookie on the plate", "img/product_pics/cookies/cookies001.jpg", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "111");
+newProduct01.render();
 
 
 

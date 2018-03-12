@@ -6,10 +6,10 @@
 
 class classProduct {
 
-    constructor(captionInnerHTML, imageSrcValue, ingredientsInnerHTML, priceInnerHTML) {
+    constructor(imageSrcValue, captionInnerHTML, ingredientsInnerHTML, priceInnerHTML) {
 
-        this.captionInnerHTML = captionInnerHTML;
         this.imageSrcValue = imageSrcValue;
+        this.captionInnerHTML = captionInnerHTML;
         this.ingredientsInnerHTML = ingredientsInnerHTML;
         this.priceInnerHTML = priceInnerHTML;
     }
@@ -18,16 +18,16 @@ class classProduct {
         let product = document.createElement("div");
         product.classList.add("product__item");
 
-        let productCaption = document.createElement("h4");
-        productCaption.classList.add("product__item-caption");
-        productCaption.innerHTML = `${this.captionInnerHTML}`;
-
         let productImage = document.createElement("img");
         productImage.classList.add("product__item-image");
         productImage.setAttribute("src", this.imageSrcValue);
         productImage.setAttribute("alt", "image error");
 
-        let productIngredients = document.createElement("span");
+        let productCaption = document.createElement("h4");
+        productCaption.classList.add("product__item-caption");
+        productCaption.innerHTML = `${this.captionInnerHTML}`;
+
+                let productIngredients = document.createElement("span");
         productIngredients.classList.add("product__item-ingredients");
         productIngredients.innerHTML = `Ingredients: ${this.ingredientsInnerHTML}`;
 
@@ -35,8 +35,8 @@ class classProduct {
         productPrice.classList.add("product__item-price");
         productPrice.innerHTML = `Price: ${this.priceInnerHTML}`;
 
-        product.appendChild(productCaption);
         product.appendChild(productImage);
+        product.appendChild(productCaption);
         product.appendChild(productIngredients);
         product.appendChild(productPrice);
         document.body.appendChild(product);
@@ -47,10 +47,10 @@ class classProduct {
 
 }
 
-let newProduct = new classProduct("Cookie on the plate", "img/product_pics/cookies/cookies001.jpg", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "111");
+let newProduct = new classProduct("img/product_pics/cookies/cookies001.jpg", "Cookie on the plate", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "111");
 newProduct.render();
 
-let newProduct01 = new classProduct("Cookie on the plate", "img/product_pics/cookies/cookies001.jpg", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "111");
+let newProduct01 = new classProduct("img/product_pics/cookies/cookies001.jpg", "Cookie on the plate", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "111");
 newProduct01.render();
 
 

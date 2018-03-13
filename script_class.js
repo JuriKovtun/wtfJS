@@ -6,12 +6,13 @@
 
 class classProduct {
 
-    constructor(imageSrcValue, captionInnerHTML, ingredientsInnerHTML, priceInnerHTML) {
+    constructor(imageSrcValue, captionInnerHTML, priceInnerHTML, ingredientsInnerHTML) {
 
         this.imageSrcValue = imageSrcValue;
         this.captionInnerHTML = captionInnerHTML;
-        this.ingredientsInnerHTML = ingredientsInnerHTML;
         this.priceInnerHTML = priceInnerHTML;
+        this.ingredientsInnerHTML = ingredientsInnerHTML;
+
     }
 
     render() {
@@ -27,31 +28,32 @@ class classProduct {
         productCaption.classList.add("product__item-caption");
         productCaption.innerHTML = `${this.captionInnerHTML}`;
 
-                let productIngredients = document.createElement("span");
-        productIngredients.classList.add("product__item-ingredients");
-        productIngredients.innerHTML = `Ingredients: ${this.ingredientsInnerHTML}`;
-
         let productPrice = document.createElement("span");
         productPrice.classList.add("product__item-price");
-        productPrice.innerHTML = `Price: ${this.priceInnerHTML}`;
+        productPrice.innerHTML = `Цена: ${this.priceInnerHTML}`;
+
+        let productIngredients = document.createElement("span");
+        productIngredients.classList.add("product__item-ingredients");
+        productIngredients.innerHTML = `Ингридиенты: ${this.ingredientsInnerHTML}`;
 
         product.appendChild(productImage);
         product.appendChild(productCaption);
-        product.appendChild(productIngredients);
         product.appendChild(productPrice);
+        product.appendChild(productIngredients);
         document.body.appendChild(product);
 
-        console.log(product);
     }
 
 
 }
 
-let newProduct = new classProduct("img/product_pics/cookies/cookies001.jpg", "Cookie on the plate", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "111");
-newProduct.render();
 
-let newProduct01 = new classProduct("img/product_pics/cookies/cookies001.jpg", "Cookie on the plate", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "111");
-newProduct01.render();
+var i;
+
+for (i = 1; i < 6; i++) {
+    let newProduct = new classProduct("img/product_pics/cookies/cookies001.jpg", "Печенье с сахарной пудрой на зеленой круглой тарелке", `${i}` + `${i}` + `${i}`, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.");
+    newProduct.render();
+}
 
 
 

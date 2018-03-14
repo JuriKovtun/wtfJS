@@ -1,40 +1,96 @@
 body {
-    margin 10px;
+    margin: 10px;
+    font-size: 14px;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+
 }
+
+
 
 .product__item {
     width: 280px;
     height: 520px;
-    display: inline-block;
+    float: left;
     margin: 10px;
-    box-shadow: 0px 0px 10px #aaaaaa;
+    box-shadow: 0 0 10px #aaaaaa;
 }
 
 .product__item-image {
     width: 100%;
 }
 
+.item-text {
+    padding: 6px 12px;
+}
+
 .product__item-caption {
-    min-height: 36px;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+    line-height: 1.4em;
+    min-height: 38px;
     margin: 0;
-    padding: 10px 20px;
     border-bottom: 1px solid #dddddd;
 
 }
 
 .product__item-price {
-    min-height: 36px;
-    display: block;
-    vertical-align: bottom;
+    line-height: 2em;
     font-weight: bold;
-    padding: 10px 20px;
     border-bottom: 1px solid #dddddd;
+    font-size: 0.8em;
+}
+
+.product__item-weight {
+    line-height: 2em;
+    font-weight: bold;
+    border-bottom: 1px solid #dddddd;
+    font-size: 0.8em;
+
+}
+
+.left {
+    display: inline-block;
+}
+
+.right {
+    display: inline-block;
+    float: right;
+    right: 20px;
+
+}
+
+.price-tag {
+    font-size: 1.6em;
+
 }
 
 .product__item-ingredients {
-    display: block;
-    padding: 10px 20px;
+    font-size: 0.8em;
+    font-weight: bold;
+    height: 93px;
+    border-bottom: 1px solid #dddddd;
+
 }
+
+.product__item-ingredients-list {
+    font-weight: normal;
+    text-align: justify;
+}
+
+.product__item-buy-button {
+    background-color: purple;
+    color: #eeeeee;
+    height: 35px;
+    width: 120px;
+    margin: auto;
+    margin-top: 20px;
+
+
+    text-align: center;
+    line-height: 35px;
+}
+
+
 
 
 

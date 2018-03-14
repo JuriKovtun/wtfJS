@@ -7,7 +7,7 @@ body {
 
 
 
-.product__item {
+.product {
     width: 280px;
     height: 520px;
     float: left;
@@ -15,15 +15,15 @@ body {
     box-shadow: 0 0 10px #aaaaaa;
 }
 
-.product__item-image {
+.product__image {
     width: 100%;
 }
 
-.item-text {
+.product-text {
     padding: 6px 12px;
 }
 
-.product__item-caption {
+.product__caption {
     letter-spacing: -0.5px;
     text-transform: uppercase;
     line-height: 1.4em;
@@ -33,14 +33,14 @@ body {
 
 }
 
-.product__item-price {
+.product__price {
     line-height: 2em;
     font-weight: bold;
     border-bottom: 1px solid #dddddd;
     font-size: 0.8em;
 }
 
-.product__item-weight {
+.product__weight {
     line-height: 2em;
     font-weight: bold;
     border-bottom: 1px solid #dddddd;
@@ -48,11 +48,11 @@ body {
 
 }
 
-.left {
+.product__price_left, .product__weight_left {
     display: inline-block;
 }
 
-.right {
+.product__price_right, .product__weight_right {
     display: inline-block;
     float: right;
     right: 20px;
@@ -64,30 +64,30 @@ body {
 
 }
 
-.product__item-ingredients {
+.product__ingredients {
     font-size: 0.8em;
     font-weight: bold;
-    height: 93px;
+    height: 125px;
     border-bottom: 1px solid #dddddd;
 
 }
 
-.product__item-ingredients-list {
+.product__ingredients-list {
     font-weight: normal;
     text-align: justify;
 }
 
-.product__item-buy-button {
+.product__buy-button {
     background-color: purple;
     color: #eeeeee;
+    display: block;
     height: 35px;
     width: 120px;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 6px;
 
 
-    text-align: center;
-    line-height: 35px;
+
 }
 
 

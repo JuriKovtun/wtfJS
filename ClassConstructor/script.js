@@ -49,10 +49,15 @@ class productItem {
 
 
 // working iterator
+let productArray = [];
+
 database.forEach(item => {
     let newItem = new productItem(item['imageSrcValue'], item['captionInnerHTML'], item['priceInnerHTML'], item['ingredientsInnerHTML']);
+    productArray.push(newItem);
     newItem.render();
 });
+
+console.log(productArray);
 
 
 // const arrayOfObjects = [{name:"Bilbo", secondname:"Baggins"}, {name:"Gandalf", secondname:"Gray"}, {name:"Nazgul", secondname:"Dark"}];

@@ -1,11 +1,9 @@
 body {
     margin: 10px;
     font-size: 14px;
-    font-family: "Helvetica Neue", Helvetica, sans-serif;
-
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #888888;
 }
-
-
 
 .product {
     width: 280px;
@@ -13,6 +11,28 @@ body {
     float: left;
     margin: 10px;
     box-shadow: 0 0 10px #aaaaaa;
+    background-color: white;
+}
+
+.product__buy {
+    position: relative;
+}
+
+.product__buy-button_container {
+    position: absolute;
+    top: 473px;
+    width: 100%;
+    border-top: 1px solid #dddddd;
+}
+
+.product__buy-button {
+    background-color: purple;
+    color: #eeeeee;
+    display: block;
+    height: 35px;
+    width: 120px;
+    margin: auto;
+    margin-top: 5px;
 }
 
 .product__image {
@@ -20,10 +40,11 @@ body {
 }
 
 .product-text {
-    padding: 6px 12px;
+    padding: 4px 15px;
 }
 
 .product__caption {
+    color: purple;
     letter-spacing: -0.5px;
     text-transform: uppercase;
     line-height: 1.4em;
@@ -34,61 +55,69 @@ body {
 }
 
 .product__price {
-    line-height: 2em;
+    color: purple;
     font-weight: bold;
     border-bottom: 1px solid #dddddd;
-    font-size: 0.8em;
+}
+
+.product__price-tag {
+    font-size: 1.8em;
+}
+
+.product__price-currency {
+    position: relative;
+    left: -5px;
 }
 
 .product__weight {
-    line-height: 2em;
-    font-weight: bold;
-    border-bottom: 1px solid #dddddd;
+    color: #646464;
+    position: relative;
+    left: 110px;
+}
+
+.product__composition {
     font-size: 0.8em;
-
+    font-weight: bold;
+    line-height: 1.2em;
+    border-bottom: 1px solid #dddddd;
 }
 
-.product__price_left, .product__weight_left {
-    display: inline-block;
-}
-
-.product__price_right, .product__weight_right {
-    display: inline-block;
-    float: right;
-    right: 20px;
-
-}
-
-.price-tag {
-    font-size: 1.6em;
-
+.product__composition-list {
+    color: #646464;
+    font-weight: normal;
+    text-align: justify;
 }
 
 .product__ingredients {
     font-size: 0.8em;
     font-weight: bold;
-    height: 125px;
-    border-bottom: 1px solid #dddddd;
+}
 
+.fa-caret-down {
+    font-size: 1.5em;
+    float: right;
+    padding-right: 15px;
 }
 
 .product__ingredients-list {
+    display: none;
+    font-size: 0.8em;
+    color: #646464;
     font-weight: normal;
     text-align: justify;
 }
 
-.product__buy-button {
-    background-color: purple;
-    color: #eeeeee;
-    display: block;
-    height: 35px;
-    width: 120px;
-    margin: auto;
-    margin-top: 6px;
-
-
-
+.active {
+    background-color: #dddddd;
 }
+
+.visible {
+    display: block;
+}
+
+
+
+
 
 
 

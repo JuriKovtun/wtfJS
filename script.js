@@ -4,19 +4,18 @@ const database = [{class: "coockie", captionTag: "h4", captionText: "Plätzchen 
                   {class: "jam", captionTag: "h4", captionText: "Marmelade 002", imageAdress: "img/product_pics/jam/jam002.jpg", ingredients: "Lorem ipsum dolor sit amet, his oratio ancillae ea, vidit malis eirmod eos eu.", price: "444"},
 ];
 
-let productTemplate = database;
+// Dropdown
 
-let className = "coockie";
-let CaptionTag = "h4";
+function classToggle (somestuff) {
+    somestuff.classList.toggle("active");
+    somestuff.nextElementSibling.classList.toggle("visible");
+}
 
-// for (let i = 0; i < productTemplate.length; i++) {
-//     let product = document.createElement("div");
-//     product.classList.add("product");
-//     product.innerHTML = productTemplate[i];
-//     document.body.appendChild(product);
-//
-//     console.log(product);
-// }
+
+
+
+
+
 
 
 

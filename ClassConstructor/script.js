@@ -49,30 +49,30 @@ class productItem {
 
 
 // working iterator
-// database.forEach(item => {
-//     let newItem = new productItem(item['imageSrcValue'], item['captionInnerHTML'], item['priceInnerHTML'], item['ingredientsInnerHTML']);
-//     newItem.render();
-// });
+database.forEach(item => {
+    let newItem = new productItem(item['imageSrcValue'], item['captionInnerHTML'], item['priceInnerHTML'], item['ingredientsInnerHTML']);
+    newItem.render();
+});
 
 
-const arrayOfObjects = [{name:"Bilbo", secondname:"Baggins"}, {name:"Gandalf", secondname:"Gray"}, {name:"Nazgul", secondname:"Dark"}];
-
+// const arrayOfObjects = [{name:"Bilbo", secondname:"Baggins"}, {name:"Gandalf", secondname:"Gray"}, {name:"Nazgul", secondname:"Dark"}];
+//
+// // arrayOfObjects.forEach(item => {
+// //     Object.keys(item).forEach(prop => {
+// //         console.log(item[prop]);
+// //     });
+// //
+// // });
+//
 // arrayOfObjects.forEach(item => {
-//     Object.keys(item).forEach(prop => {
-//         console.log(item[prop]);
-//     });
+//     // console.log(item);
+//     let unit = Object.keys(item);
+//     console.log(unit);
+//     // unit.forEach(prop => {
+//     //     console.log(prop);
+//     // });
+//
 //
 // });
-
-arrayOfObjects.forEach(item => {
-    // console.log(item);
-    let unit = Object.keys(item);
-    // console.log(item[unit[1]]);
-    unit.forEach(prop => {
-        console.log(prop);
-    });
-
-
-});
 
 

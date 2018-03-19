@@ -1,23 +1,25 @@
-const database = [{productCategory: "01cookie", imageSrcValue: "../img/product_pics/cookies/cookies001.jpg", captionInnerHTML: "Plätzchen 001", priceInnerHTML: "111", ingredientsInnerHTML: "Lorem ipsum dolor sit amet, his oratio ancillae ea, vidit malis eirmod eos eu."},
-    {productCategory: "01cookie", imageSrcValue: "../img/product_pics/cookies/cookies002.jpg", captionInnerHTML: "Plätzchen 002", priceInnerHTML: "222",  ingredientsInnerHTML: "Lorem ipsum dolor sit amet, his oratio ancillae ea, vidit malis eirmod eos eu."},
-    {productCategory: "02jam", imageSrcValue: "../img/product_pics/jam/jam001.jpg", captionInnerHTML: "Marmelade 001", priceInnerHTML: "333",  ingredientsInnerHTML: "Lorem ipsum dolor sit amet, his oratio ancillae ea, vidit malis eirmod eos eu."},
-    {productCategory: "02jam", imageSrcValue: "../img/product_pics/jam/jam002.jpg", captionInnerHTML: "Marmelade 002", priceInnerHTML: "444",  ingredientsInnerHTML: "Lorem ipsum dolor sit amet, his oratio ancillae ea, vidit malis eirmod eos eu."},
+const database = [{productCategory: "01cookie", imageSrcValue: "../img/product_pics/cookies/cookies001.jpg", productCaption: "Plätzchen 001", productPrice: "111", productComposition: "Lorem ipsum dolor sit amet, his oratio ancillae ea, vidit malis eirmod eos eu."},
+    {productCategory: "01cookie", imageSrcValue: "../img/product_pics/cookies/cookies002.jpg", productCaption: "Plätzchen 002", productPrice: "222",  productComposition: "Lorem ipsum dolor sit amet, his oratio ancillae ea, vidit malis eirmod eos eu."},
+    {productCategory: "02jam", imageSrcValue: "../img/product_pics/jam/jam001.jpg", productCaption: "Marmelade 001", productPrice: "333",  productComposition: "Lorem ipsum dolor sit amet, his oratio ancillae ea, vidit malis eirmod eos eu."},
+    {productCategory: "02jam", imageSrcValue: "../img/product_pics/jam/jam002.jpg", productCaption: "Marmelade 002", productPrice: "444",  productComposition: "Lorem ipsum dolor sit amet, his oratio ancillae ea, vidit malis eirmod eos eu."},
 ];
 
-class productItem {
+class product {
 
-    constructor(imageSrcValue, captionInnerHTML, priceInnerHTML, ingredientsInnerHTML) {
+    constructor(productCategory, imageSrcValue, productCaption, productPrice, productComposition) {
 
+        this.productCategory = productCategory;
         this.imageSrcValue = imageSrcValue;
-        this.captionInnerHTML = captionInnerHTML;
-        this.priceInnerHTML = priceInnerHTML;
-        this.ingredientsInnerHTML = ingredientsInnerHTML;
+        this.productCaption = productCaption;
+        this.productPrice = productPrice;
+        this.productComposition = productComposition;
 
     }
 
     render() {
         let product = document.createElement("div");
         product.classList.add("product__item");
+        product.setAttribute("productCategory", this.productCategory);
 
         let productImage = document.createElement("img");
         productImage.classList.add("product__item-image");
@@ -26,15 +28,15 @@ class productItem {
 
         let productCaption = document.createElement("h4");
         productCaption.classList.add("product__item-caption");
-        productCaption.innerHTML = `${this.captionInnerHTML}`;
+        productCaption.innerHTML = `${this.productCaption}`;
 
         let productPrice = document.createElement("span");
         productPrice.classList.add("product__item-price");
-        productPrice.innerHTML = `Цена: ${this.priceInnerHTML}`;
+        productPrice.innerHTML = `Цена: ${this.productPrice}`;
 
         let productIngredients = document.createElement("span");
         productIngredients.classList.add("product__item-ingredients");
-        productIngredients.innerHTML = `Ингридиенты: ${this.ingredientsInnerHTML}`;
+        productIngredients.innerHTML = `Ингридиенты: ${this.productComposition}`;
 
         product.appendChild(productImage);
         product.appendChild(productCaption);
@@ -49,35 +51,25 @@ class productItem {
 
 
 // working iterator
+
 let productArray = [];
 
-database.forEach(item => {
-    let newItem = new productItem(item['imageSrcValue'], item['captionInnerHTML'], item['priceInnerHTML'], item['ingredientsInnerHTML']);
-    productArray.push(newItem);
-    newItem.render();
+database.map(item => {
+    let newProduct = new product(item['productCategory'], item['imageSrcValue'], item['productCaption'], item['productPrice'], item['productComposition']);
+    productArray.push(newProduct);
+    newProduct.render();
 });
 
 console.log(productArray);
 
 
+
+// sandbox
+
 // const arrayOfObjects = [{name:"Bilbo", secondname:"Baggins"}, {name:"Gandalf", secondname:"Gray"}, {name:"Nazgul", secondname:"Dark"}];
 //
-// // arrayOfObjects.forEach(item => {
-// //     Object.keys(item).forEach(prop => {
-// //         console.log(item[prop]);
-// //     });
-// //
-// // });
-//
-// arrayOfObjects.forEach(item => {
-//     // console.log(item);
-//     let unit = Object.keys(item);
-//     console.log(unit);
-//     // unit.forEach(prop => {
-//     //     console.log(prop);
-//     // });
-//
-//
-// });
+// arrayOfObjects.map(item => console.log(item['name'], item['secondname']));
+
+
 
 

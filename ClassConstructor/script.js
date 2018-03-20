@@ -4,7 +4,7 @@ const database = [{productCategory: "01cookie", imageSrcValue: "../img/product_p
     {productCategory: "02jam", imageSrcValue: "../img/product_pics/jam/jam002.jpg", productCaption: "Marmelade 002", productPrice: "444",  productComposition: "Lorem ipsum dolor sit amet, his oratio ancillae ea, vidit malis eirmod eos eu."},
 ];
 
-class product {
+class Product {
 
     constructor(productCategory, imageSrcValue, productCaption, productPrice, productComposition) {
 
@@ -43,7 +43,7 @@ class product {
         product.appendChild(productPrice);
         product.appendChild(productIngredients);
         document.body.appendChild(product);
-
+        return this;
     }
 
 
@@ -52,23 +52,55 @@ class product {
 
 // working iterator
 
-let productArray = [];
+// let productArray = database.map(item => new Product(item['productCategory'], item['imageSrcValue'], item['productCaption'], item['productPrice'], item['productComposition']).render());
 
-database.map(item => {
-    let newProduct = new product(item['productCategory'], item['imageSrcValue'], item['productCaption'], item['productPrice'], item['productComposition']);
-    productArray.push(newProduct);
-    newProduct.render();
-});
 
-console.log(productArray);
+
+
 
 
 
 // sandbox
 
-// const arrayOfObjects = [{name:"Bilbo", secondname:"Baggins"}, {name:"Gandalf", secondname:"Gray"}, {name:"Nazgul", secondname:"Dark"}];
+const arrayOfObjects = [
+                        {"person1":{name:"Bilbo",secondname:"Baggins"}},
+                        {"person2":{name:"Gandalf",secondname:"Gray"}},
+                        {"person3":{name:"Nazgul",secondname:"Dark"}}
+                        ];
+
+
+
+
+
+
+let out = arrayOfObjects.map(item => Object.keys(item)[0]);
+console.log(out);
+
+let output = arrayOfObjects[0]['person1']['name'];
+console.log(output);
+
+
+
+
+// let hui = Object.keys(arrayOfObjects[0]);
+// let wam = Object.keys(arrayOfObjects[1]);
+// let out = [];
+// out.push(hui[0]);
+// out.push(wam[0]);
 //
-// arrayOfObjects.map(item => console.log(item['name'], item['secondname']));
+// console.log(out);
+
+// let put = ["a", "b", "c"];
+// console.log(put);
+
+
+
+// function productCategory () {
+//     return "jam"
+// }
+//
+// console.log(productCategory());
+
 
 
 

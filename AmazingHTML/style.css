@@ -1,0 +1,30 @@
+.z {
+    height: 250px;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    vertical-align: top;
+}
+
+.a, .b, .c {
+    display: inline-block;
+    vertical-align: top;
+    height: 100px;
+    padding: 0;
+    margin: 0;
+}
+
+.a {
+    width: 33%;
+    background-color: rebeccapurple;
+}
+
+.b {
+    width: 1%;
+    background-color: crimson;
+}
+
+.c {
+    width: 66%;
+    background-color: coral;
+}

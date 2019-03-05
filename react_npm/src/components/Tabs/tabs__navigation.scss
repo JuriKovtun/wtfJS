@@ -1,0 +1,40 @@
+.tabs__navigation {
+  display: flex;
+}
+
+.tabs__navigation-link {
+  flex-grow: 1;
+  height: 60px;
+  color: white;
+  background: #546d82;
+  border: none;
+  font-size: 1rem;
+
+  &:hover {
+    background: #bbb;
+  }
+
+  &_yellow {
+    background: #f1c40f;
+
+    &:hover {
+      background: #f1c40f;
+    }
+  }
+
+  &_purple {
+    background: #9b59b6;
+
+    &:hover {
+      background: #9b59b6;
+    }
+  }
+
+  &_mint {
+    background: #1abc9c;
+
+    &:hover {
+      background: #1abc9c;
+    }
+  }
+}

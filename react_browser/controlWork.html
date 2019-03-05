@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>control</title>
+    <style>
+        body {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+
+
+
+<script>
+    const foo = [10, 11, 20];
+
+// const head = ([head]) => head;
+//     function head([a, b]) {
+//         return {a, b}
+//     }
+//
+//
+//     const bar = head(foo);
+//     console.log(bar)
+
+    // let a, b;
+    // [a, ...b] = foo;
+    // const bar = ([a, ...b]) => b;
+    class Bar {
+        constructor(height, width) {
+            this._height = height;
+            this._width = width;
+
+        }
+        static twerk() {
+            console.log(Bar.toString());
+        }
+
+    }
+
+    const aaa = () => {
+        console.log(aaa.toString());
+    };
+
+    aaa();
+    Bar.twerk();
+
+
+
+
+
+
+
+    const head = ([head]) => head;
+    const tail = ([head, ...tail]) => tail;
+    const isArray = el => Array.isArray(el);
+    const reverse = arr => arr.reverse();
+
+    const curry = fn => (...args) =>
+        args.length === fn.length ? fn(...args) : curry(fn.bind(null, ...args));
+
+    const flip = fn => curry((a, b) => fn(b, a));
+
+    const reduce = curry((fn, initial, arr) =>
+        arr.length === 0 ? initial : reduce(fn, fn(initial, head(arr)), tail(arr))
+    );
+
+    const map = curry((fn, arr) => reduce((acc, el) => [...acc, fn(el)], [], arr));
+    const filter = curry((fn, arr) =>
+        reduce((acc, el) => (fn(el) === true ? [...acc, el] : acc), [], arr)
+    );
+
+    const pipe = (...fns) => el => reduce((acc, fn) => fn(acc), el, fns);
+    const compose = (...fns) => el =>
+        reduce((acc, fn) => fn(acc), el, reverse(fns));
+
+    const flatten = arr =>
+        reduce((acc, el) => [...acc, ...(isArray(el) ? flatten(el) : [el])], [], arr);
+
+    // Tests
+    const sum = (a, b, c) => a + b + c;
+    const curriedSum = curry(sum);
+    curriedSum(1, 2, 3); /*?*/
+    curriedSum(1)(2)(3); /*?*/
+    curriedSum(1, 2)(3); /*?*/
+    curriedSum(1)(2, 3); /*?*/
+
+    const arr = [1, 2, 3, 4, 5];
+
+    reduce((a, b) => a + b, 0, arr) /*?*/;
+    map(a => a + 1, arr); /*?*/
+    filter(a => a % 2 !== 0, arr); /*?*/
+
+    pipe(
+        map(a => a + 1),
+        reduce((sum, el) => sum + el, 0)
+    )(arr); /*?*/
+
+    compose(
+        reduce((sum, el) => sum + el, 0),
+        map(a => a + 1)
+    )(arr); /*?*/
+
+    flatten([1, 2, 3, 4, 5]); /*?*/
+    flatten([1, [[[[2, [[3]]]]]], [4, 5]]); /*?*/
+
+    flip(map)([1, 2, 3], a => a + 1) /*?*/;
+
+    const join = curry((separator, [head, ...rest]) =>
+        reduce((a, b) => a + separator + b, head, rest)
+    );
+
+    const joinWithDash = join(" - ");
+    const joinWithPlus = join(" + ");
+
+    joinWithDash(["a", "b", "c"]); /*?*/
+    joinWithPlus(["a", "b", "c"]); /*?*/
+
+</script>
+</body>
+</html>

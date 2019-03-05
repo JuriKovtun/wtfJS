@@ -1,0 +1,12 @@
+:root {
+    --main-color: 200;
+    --modifyer: 10;
+}
+
+body {
+    background-color: rgb(
+            calc( var(--main-color) / var(--modifyer) ),
+            calc( var(--main-color) / var(--modifyer) ),
+            calc( var(--main-color) / var(--modifyer) )
+    )
+}

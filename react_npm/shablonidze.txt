@@ -1,0 +1,39 @@
+index.js -->>
+import React from "react"
+import ReactDOM from "react-dom"
+import "./styles/index.scss"
+import App from "./components/App"
+import * as serviceWorker from "./serviceWorker"
+
+ReactDOM.render(<App />, document.getElementById("root"))
+
+App.js -->>
+import React, { Component } from "react"
+import "../styles/App.scss"
+import GraphContainer from "./GraphContainer"
+import ArticleContainer from "./ArticleContainer"
+
+///////////////// Testing vx network
+import TestVX from "./TestVX"
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+          <div className={"App__article-block test-graph"}>
+          <TestVX width={'450'} height={'600'} />
+          </div>
+        <div className={"App__article-block"}>
+          <ArticleContainer />
+        </div>
+        <div className={"App__graph-block"}>
+          <GraphContainer/>
+        </div>
+
+
+      </div>
+    )
+  }
+}
+
+export default App

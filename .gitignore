@@ -1,5 +1,8 @@
 # dependencies
 node_modules/
 
+# editor settings
+.vscode/
+
 # some local files
 _stuff/

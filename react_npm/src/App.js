@@ -7,7 +7,7 @@ import Tabs from './components/Tabs/Tabs';
 class App extends Component {
     render() {
         return (
-            <Tabs/>
+            <Tabs />
         )
     }
 }

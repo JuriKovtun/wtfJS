@@ -16,21 +16,25 @@ import * as serviceWorker from './serviceWorker';
 ////// ~~~ Draft JS
 // import App from './DraftJS/App';
 
+////// ~~~ Test from coder to Boss
+import App from './components/Testik/App'
+ReactDOM.render(<App />, document.getElementById('root'));
+
 ////// ~~~ Tabs
-// import App from './App'
+// import App from './components/Tabs/App'
+// ReactDOM.render(<App />, document.getElementById('root'));
 
 ////// ~~~ todo
 // import App from './todo/Todo'
 
 ////// ~~~ Todo by Andy Van Slaars
-import App from './components/TodoByAndy/App';
+/* import App from './components/TodoByAndy/App';
 import store from './components/TodoByAndy/store';
-
 
 store.dispatch({ type: 'ADD_TODO', id: '4', text: 'meet Smetana!' });
 
 const state = store.getState();
-ReactDOM.render(<App todo={state.todo} />, document.getElementById('root'));
+ReactDOM.render(<App todo={state.todo} />, document.getElementById('root')); */
 
 // const App = () => {
 //     return (

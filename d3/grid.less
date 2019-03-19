@@ -1,0 +1,29 @@
+@column-number: 12;
+@grid-width: 1140px;
+@cell-width: 70px;
+@cell-margin: 30px;
+
+
+.Grid {
+    width: 1140px;
+    background:lightgreen;
+    margin: 0 auto;
+    overflow: hidden;
+
+    &__row {
+
+    }
+
+    &__cell {
+        float: left;
+
+        &_1 {width: @cell-width * 1 + (@cell-margin * (1 - 1)) ; margin: 0 @cell-margin;}
+        &_2 {width: @cell-width * 2 + (@cell-margin * (2 - 1)) ; margin: 0 @cell-margin;}
+        &_3 {width: @cell-width * 3 + (@cell-margin * (3 - 1)) ; margin: 0 @cell-margin;}
+        &_4 {width: @cell-width * 4 + (@cell-margin * (4 - 1)) ; margin: 0 @cell-margin;}
+        background: lightgoldenrodyellow;
+
+    }
+
+
+}

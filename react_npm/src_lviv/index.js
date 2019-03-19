@@ -1,6 +1,6 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import * as serviceWorker from "./serviceWorker";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import * as serviceWorker from './serviceWorker';
 
 // import './styles/index.css';
 
@@ -17,8 +17,8 @@ import * as serviceWorker from "./serviceWorker";
 // import App from './DraftJS/App';
 
 ////// ~~~ Test from coder to Boss
-// import App from './components/Testik/App'
-// ReactDOM.render(<App />, document.getElementById('root'));
+import App from './components/Testik/App'
+ReactDOM.render(<App />, document.getElementById('root'));
 
 ////// ~~~ Tabs
 // import App from './components/Tabs/App'
@@ -35,9 +35,6 @@ store.dispatch({ type: 'ADD_TODO', id: '4', text: 'meet Smetana!' });
 
 const state = store.getState();
 ReactDOM.render(<App todo={state.todo} />, document.getElementById('root')); */
-
-import App from "./components/Form/App";
-ReactDOM.render(<App />, document.getElementById("root"));
 
 // const App = () => {
 //     return (

@@ -1,0 +1,18 @@
+.tabs__content {
+  color: white;
+  text-align: center;
+  padding: 120px;
+  display: block;
+
+  &_yellow {
+    background: #f1c40f;
+  }
+
+  &_purple {
+    background: #9b59b6;
+  }
+
+  &_mint {
+    background: #1abc9c;
+  }
+}

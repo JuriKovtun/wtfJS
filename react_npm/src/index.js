@@ -28,16 +28,17 @@ import * as serviceWorker from "./serviceWorker";
 // import App from './todo/Todo'
 
 ////// ~~~ Todo by Andy Van Slaars
-/* import App from './components/TodoByAndy/App';
-import store from './components/TodoByAndy/store';
+import App from "./components/TodoByAndy/App";
+import store from "./components/TodoByAndy/store";
 
-store.dispatch({ type: 'ADD_TODO', id: '4', text: 'meet Smetana!' });
+store.dispatch({ type: "ADD_TODO", id: "4", text: "meet Smetana!" });
 
 const state = store.getState();
-ReactDOM.render(<App todo={state.todo} />, document.getElementById('root')); */
+ReactDOM.render(<App todo={state.todo} />, document.getElementById("root"));
 
-import App from "./components/Form/App";
-ReactDOM.render(<App />, document.getElementById("root"));
+////// ~~~ VR blog
+// import App from "./components/Form/App";
+// ReactDOM.render(<App />, document.getElementById("root"));
 
 // const App = () => {
 //     return (

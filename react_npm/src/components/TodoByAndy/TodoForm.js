@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 export default () => (
-    <form className="TodoInput">
-        <input type="text"/>
-    </form>
-)
+  <form className="TodoInput">
+    <input type="text" />
+  </form>
+);

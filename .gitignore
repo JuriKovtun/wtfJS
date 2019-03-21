@@ -6,3 +6,6 @@ node_modules/
 
 # some local files
 _stuff/
+
+# js libraries
+_libraries/

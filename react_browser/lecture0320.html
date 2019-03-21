@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <style>
+      body {
+        width: 500px;
+        height: 500px;
+        background: cornflowerblue;
+      }
+
+      html {
+        background: crimson;
+      }
+      .foo {
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="foo">click me</button>
+
+    <script>
+      const element = document.querySelector(".foo");
+      let counter = 0;
+
+      element.addEventListener("click", () => {
+        console.log("clicked: ", ++counter);
+      });
+
+      const moveElement = ({ pageY, pageX }) => {
+        console.log(pageY, pageY);
+        element.style.top = pageY + "px";
+        element.style.left = pageX + "px";
+      };
+
+      const startDragging = ev => {
+        console.log("dragging started");
+        document.body.addEventListener("mousemove", moveElement);
+      };
+
+      startDragging();
+    </script>
+  </body>
+</html>

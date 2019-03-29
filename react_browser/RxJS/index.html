@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>RxJS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://unpkg.com/@reactivex/rxjs@5.0.0-beta.12/dist/global/Rx.js"></script>
+    <style>
+      html {
+        background: #333;
+      }
+      body {
+        font-size: 0;
+      }
+      .wrapper {
+        width: 450px;
+        margin: 0 auto;
+      }
+      .container {
+        width: 450px;
+        height: 300px;
+        background: cornflowerblue;
+      }
+      .output {
+        width: 450px;
+        background: crimson;
+        color: white;
+      }
+
+      .output__counter {
+        display: inline-block;
+        font-size: 10rem;
+        padding: 1rem;
+        margin: 0;
+        vertical-align: top;
+      }
+      .output__position {
+        display: inline-block;
+        font-size: 4rem;
+        padding: 1rem;
+        margin: 0;
+        line-height: 5rem;
+      }
+
+      .button {
+        width: 80px;
+        height: 22px;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="wrapper">
+      <div class="container">
+        <button class="button">click me</button>
+      </div>
+      <div class="output">
+        <p class="output__counter"></p>
+        <p class="output__position"></p>
+      </div>
+    </section>
+
+    <script src="smart.js"></script>
+    <!-- <script src="dumb.js"></script> -->
+  </body>
+</html>
